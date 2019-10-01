@@ -9,7 +9,7 @@ import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    String[] colors={"Red", "Blue", "Yellow", "Purple", "Orange", "Gray"};
+    String[] text={"Red", "Blue", "Yellow", "Purple", "Orange", "Gray"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,15 +19,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Spinner spinner = (Spinner) findViewById(R.id.mySpinner);
         spinner.setOnItemSelectedListener(this);
 
+        ColorAdapter colorAdapter = new ColorAdapter(getApplicationContext(), text);
+        //spinner.setAdapter(colorAdapter);
+
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        
+    public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
+
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> parent) {
+    public void onNothingSelected(AdapterView<?> arg0) {
 
     }
 }
