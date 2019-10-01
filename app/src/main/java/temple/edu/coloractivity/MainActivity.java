@@ -2,6 +2,7 @@ package temple.edu.coloractivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -9,7 +10,12 @@ import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    String[] text={"Red", "Blue", "Yellow", "Purple", "Orange", "Gray"};
+    String[] text={"Red", "Blue", "Yellow", "Purple", "Gray"};
+    int[] color={Color.parseColor("red"),
+                 Color.parseColor("blue"),
+                 Color.parseColor("yellow"),
+                 Color.parseColor("purple"),
+                 Color.parseColor("grey")};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Spinner spinner = (Spinner) findViewById(R.id.mySpinner);
         spinner.setOnItemSelectedListener(this);
 
-        ColorAdapter colorAdapter = new ColorAdapter(getApplicationContext(), text);
+        ColorAdapter colorAdapter = new ColorAdapter(getApplicationContext(), text, color);
         spinner.setAdapter(colorAdapter);
 
     }

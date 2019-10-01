@@ -12,13 +12,14 @@ public class ColorAdapter extends BaseAdapter {
 
     Context context;
     String[] text;
-    String[] colors;
+    int[] colors;
     LayoutInflater inflater;
 
-    public ColorAdapter(Context context, String[] text)
+    public ColorAdapter(Context context, String[] text, int[] colors)
     {
         this.context = context;
         this.text = text;
+        this.colors = colors;
         inflater = (LayoutInflater.from(context));
     }
 
@@ -41,6 +42,7 @@ public class ColorAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         view = inflater.inflate(R.layout.spinner_items, null);
         TextView colorText = (TextView) view.findViewById(R.id.colorText);
+        colorText.setBackgroundColor(colors[i]);
         colorText.setText(text[i]);
         return view;
     }
