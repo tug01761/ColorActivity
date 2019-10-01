@@ -10,12 +10,17 @@ import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    String[] text={"Red", "Blue", "Yellow", "Purple", "Gray"};
-    int[] color={Color.parseColor("red"),
+    String[] text={"White", "Red", "Blue", "Yellow", "Purple", "Gray", "Green", "Cyan", "Magenta", "Silver"};
+    int[] color={Color.parseColor("white"),
+                 Color.parseColor("red"),
                  Color.parseColor("blue"),
                  Color.parseColor("yellow"),
                  Color.parseColor("purple"),
-                 Color.parseColor("grey")};
+                 Color.parseColor("grey"),
+                 Color.parseColor("green"),
+                 Color.parseColor("cyan"),
+                 Color.parseColor("magenta"),
+                 Color.parseColor("silver")};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
