@@ -7,10 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+    //spinner text list
     String[] text={"White", "Red", "Blue", "Yellow", "Purple", "Gray", "Green", "Cyan", "Magenta", "Silver"};
+
+    //color list
     int[] color={Color.parseColor("white"),
                  Color.parseColor("red"),
                  Color.parseColor("blue"),
@@ -39,8 +43,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id) {
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         background.setBackgroundColor(color[position]);
+        TextView selectedText=  view.findViewById(R.id.colorText);
+        selectedText.setBackgroundColor(Color.parseColor("white"));
     }
 
     @Override
