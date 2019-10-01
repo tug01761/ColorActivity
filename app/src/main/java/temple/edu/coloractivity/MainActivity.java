@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinner.setOnItemSelectedListener(this);
 
         ColorAdapter colorAdapter = new ColorAdapter(getApplicationContext(), text);
-        //spinner.setAdapter(colorAdapter);
+        spinner.setAdapter(colorAdapter);
 
     }
 
